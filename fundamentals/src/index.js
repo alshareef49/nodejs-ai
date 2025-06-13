@@ -5,15 +5,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const client = new OpenAI({
-    apiKey: process.env.OPEN_ROUTER_API_KEY,
-    baseURL: process.env.OPEN_ROUTER_BASE_URL
+    apiKey: process.env.GROQ_API_KEY,
+    baseURL: process.env.GROQ_BASE_URL
 
 });
 
 const prompt = "I need to start resisting training, suggest me routine under 500 words."
 
 const response = await client.chat.completions.create({
-    model: "mistralai/devstral-small:free",
+    model: "meta-llama/llama-4-scout-17b-16e-instruct",
     messages: [
         {
             role: "system",
